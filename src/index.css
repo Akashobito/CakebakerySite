@@ -16,9 +16,15 @@
 
 @layer components {
   .cart {
-    @apply pb-7 h-70 bg-amber-600 flex justify-around items-end;
+    @apply pb-7 h-70 bg-slate-100 flex justify-around items-end rounded-2xl;
   }
   .heading {
     @apply font-caveat text-5xl font-bold mt-4 mb-4;
+  }
+  .product-logo {
+    @apply w-15 h-15 bg-amber-400 rounded-full
+  }
+  .product-image {
+    @apply absolute w-45 h-45 object-contain top-0
   }
 }
