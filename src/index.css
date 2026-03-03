@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply pb-20
+  }
+}
+
+@theme {
+  --font-caveat: 'caveat variable';
+  --font-lobster: 'lobster';
+  --font-roboto: 'roboto';
+  --font-exo2: 'Exo 2 variable';
+  --font-oswald: 'Oswald Variable', sans-serif;
+}
+
+@layer components {
+  .cart {
+    @apply pb-7 h-70 bg-amber-600 flex justify-around items-end;
+  }
+  .heading {
+    @apply font-caveat text-5xl font-bold mt-4 mb-4;
+  }
+}
