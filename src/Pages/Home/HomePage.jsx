@@ -13,30 +13,116 @@ import ingredients from "../../assets/icons/dairy-food.png";
 import tasty from "../../assets/icons/burger image.png";
 
 function HomePage() {
-  const [menu, setMenu] = useState('cookie');
-  const initialProduct = [{
-  name: 'Mini Cupcake',
-  price: '$100'},{
-  name: 'fried cheese ball',
-  price: '$120'},{
-  name: 'croissants',
-  price: '$130'}]
-  
-  const [product, setProduct] = useState(initialProduct)
+  const [menu, setMenu] = useState("cookie");
+  const initialProduct = [
+    {
+      name: "Mini Cupcake",
+      price: "$100",
+    },
+    {
+      name: "fried cheese ball",
+      price: "$120",
+    },
+    {
+      name: "croissants",
+      price: "$130",
+    },
+  ];
 
-  const handleMenu = (option) =>{
-    setMenu(option)
-  }
+  const [menuProduct, setMenuProduct] = useState(initialProduct);
 
-  useEffect(()=>{
-    
-  },[])
+  const handleMenu = (option) => {
+    setMenu(option);
+  };
+
+  const handleMenuProduct = (option) => {
+    if (option == "cookie") {
+      console.log(initialProduct);
+    } else if (option === "cakes") {
+      const updatedOption = [
+        {
+          name: "Rasmalai Cake",
+          price: "$100",
+        },
+        {
+          name: "Black Forest",
+          price: "$120",
+        },
+        {
+          name: "Pistachio Cardamom Rose",
+          price: "$130",
+        },
+      ];
+
+      setMenuProduct(updatedOption);
+      
+    } else if (option === "pastries") {
+      const updatedOption = [
+        {
+          name: "Baklava",
+          price: "$100",
+        },
+        {
+          name: "Cream puff",
+          price: "$120",
+        },
+        {
+          name: "Danish pastry",
+          price: "$130",
+        },
+      ];
+
+      setMenuProduct(updatedOption);
+      
+    } else if (option === "bread") {
+      const updatedOption = [
+        {
+          name: "Multigrain",
+          price: "$100",
+        },
+        {
+          name: "Focaccia",
+          price: "$120",
+        },
+        {
+          name: "English muffin",
+          price: "$130",
+        },
+      ];
+      
+      setMenuProduct(updatedOption);
+      
+    } else if (option === "cupcakes") {
+      const updatedOption = [
+        {
+          name: "Classic Vanilla",
+          price: "$100",
+        },
+        {
+          name: "Salted Caramel",
+          price: "$120",
+        },
+        {
+          name: "Tiramisu",
+          price: "$130",
+        },
+      ];
+      setMenuProduct(updatedOption);
+    }
+  };
+
+  useEffect(() => {
+    console.log(menuProduct);
+  }, [menuProduct]);
 
   return (
     <>
-      <section id='home' className="relative pb-25 pt-20 flex w-full overflow-hidden">
-        <div className="mb-5 ml-30 w-170 mt-30 flex flex-col ">
-          <h1 className="font-caveat text-8xl font-bold mt-10">
+      <section
+        id="home"
+        className="relative flex w-full overflow-hidden pt-20 pb-25"
+      >
+        <div className="mt-30 mb-5 ml-30 flex w-170 flex-col">
+          <h1 className="font-caveat mt-10 text-8xl font-bold">
             Delicious Baked <br></br> Goodness
           </h1>
           <p className="font-oswald w-120 text-left lg:mt-4 lg:mb-5">
@@ -54,7 +140,10 @@ function HomePage() {
         </div>
       </section>
 
-      <section id='about' className="w-ful mt-30 pt-25 flex flex-col items-center justify-center">
+      <section
+        id="about"
+        className="w-ful mt-30 flex flex-col items-center justify-center pt-25"
+      >
         <p className="font-caveat text-5xl font-bold">Indulge in tThe Taste</p>
         <p className="font-oswald mt-4 w-100 text-center">
           the kind that makes you slow down, take a deeper bite, and let every
@@ -125,7 +214,10 @@ function HomePage() {
         </div>
       </section>
 
-      <section id='menu' className="m mt-20 pt-20 flex w-full flex-col items-center">
+      <section
+        id="menu"
+        className="m mt-20 flex w-full flex-col items-center pt-20"
+      >
         <div className="flex w-170 flex-col items-center">
           <p className="font-caveat mt-4 mb-4 text-5xl font-bold">Our Menu</p>
           <p className="font-oswald w-100 text-center">
@@ -135,47 +227,107 @@ function HomePage() {
         </div>
 
         <div className="mt-10 flex w-240 justify-around">
-          <div onClick={()=>{handleMenu('cookie')}} className="flex-col space-y-1">
+          <div
+            onClick={() => {
+              handleMenu("cookie");
+              handleMenuProduct("cookie");
+            }}
+            className="flex-col space-y-1"
+          >
             <div className="product-logo hover-action peer group">
               <img className="icons hover-image-action" src={cookie} />
             </div>
-            <p className={menu === 'cookie'? 'font-oswald text-center transition text-amber-500 peer-hover:text-amber-500': 'font-oswald text-center transition peer-hover:text-amber-500'}>
+            <p
+              className={
+                menu === "cookie"
+                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500"
+                  : "font-oswald text-center transition peer-hover:text-amber-500"
+              }
+            >
               Cookies
             </p>
           </div>
 
-          <div onClick={()=>{handleMenu('cakes')}} className="flex-col space-y-1">
+          <div
+            onClick={() => {
+              handleMenu("cakes");
+              handleMenuProduct("cakes");
+            }}
+            className="flex-col space-y-1"
+          >
             <div className="product-logo hover-action peer group">
               <img className="icons hover-image-action" src={cake} />
             </div>
-            <p className={menu === 'cakes'? 'font-oswald text-center transition peer-hover:text-amber-500 text-amber-500':'font-oswald text-center transition peer-hover:text-amber-500'}>
+            <p
+              className={
+                menu === "cakes"
+                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500"
+                  : "font-oswald text-center transition peer-hover:text-amber-500"
+              }
+            >
               Cakes
             </p>
           </div>
 
-          <div onClick={()=>{handleMenu('pastries')}} className="flex-col space-y-1">
+          <div
+            onClick={() => {
+              handleMenu("pastries");
+              handleMenuProduct("pastries");
+            }}
+            className="flex-col space-y-1"
+          >
             <div className="product-logo hover-action peer group">
               <img className="icons hover-image-action" src={cupcake} />
             </div>
-            <p className={menu === 'pastries'? 'font-oswald text-center transition peer-hover:text-amber-500 text-amber-500':'font-oswald text-center transition peer-hover:text-amber-500'}>
+            <p
+              className={
+                menu === "pastries"
+                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500"
+                  : "font-oswald text-center transition peer-hover:text-amber-500"
+              }
+            >
               Pastries
             </p>
           </div>
 
-          <div onClick={()=>{handleMenu('bread')}} className="flex-col space-y-1">
+          <div
+            onClick={() => {
+              handleMenu("bread");
+              handleMenuProduct("bread");
+            }}
+            className="flex-col space-y-1"
+          >
             <div className="product-logo hover-action peer group">
-              <img className="icons w-11 hover-image-action" src={bread} />
+              <img className="icons hover-image-action w-11" src={bread} />
             </div>
-            <p className={menu === 'bread'? 'font-oswald text-center transition peer-hover:text-amber-500 text-amber-500':'font-oswald text-center transition peer-hover:text-amber-500'}>
+            <p
+              className={
+                menu === "bread"
+                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500"
+                  : "font-oswald text-center transition peer-hover:text-amber-500"
+              }
+            >
               Bread
             </p>
           </div>
 
-          <div onClick={()=>{handleMenu('cupcakes')}} className="flex-col space-y-1">
+          <div
+            onClick={() => {
+              handleMenu("cupcakes");
+              handleMenuProduct("cupcakes");
+            }}
+            className="flex-col space-y-1"
+          >
             <div className="product-logo hover-action peer group">
               <img className="icons hover-image-action" src={strawberrycake} />
             </div>
-            <p className={menu === 'cupcakes'? 'font-oswald text-center transition peer-hover:text-amber-500 text-amber-500':'font-oswald text-center transition peer-hover:text-amber-500'}>
+            <p
+              className={
+                menu === "cupcakes"
+                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500"
+                  : "font-oswald text-center transition peer-hover:text-amber-500"
+              }
+            >
               Cupcakes
             </p>
           </div>
@@ -208,7 +360,10 @@ function HomePage() {
         </div>
       </section>
 
-      <section id='blog' className="mt-25 pt-20 flex w-full flex-col items-center">
+      <section
+        id="blog"
+        className="mt-25 flex w-full flex-col items-center pt-20"
+      >
         <div className="flex flex-col items-center">
           <p className="heading">Our Blog</p>
           <p className="font-oswald w-67 text-center">
@@ -252,7 +407,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section id='contact' className="mt-30 pb-10 flex flex-col items-center">
+      <section id="contact" className="mt-30 flex flex-col items-center pb-10">
         <div>
           <p className="heading text-center">
             Have Questions? Reach <br></br> Out To us
