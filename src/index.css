@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @layer base {
-  body {
-    @apply pb-20;
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
   }
 }
 

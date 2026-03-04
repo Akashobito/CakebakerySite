@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "@fontsource/lobster";
 import "@fontsource-variable/caveat";
 import "@fontsource-variable/oswald";
@@ -13,14 +13,33 @@ import ingredients from "../../assets/icons/dairy-food.png";
 import tasty from "../../assets/icons/burger image.png";
 
 function HomePage() {
+  const [menu, setMenu] = useState('cookie');
+  const initialProduct = [{
+  name: 'Mini Cupcake',
+  price: '$100'},{
+  name: 'fried cheese ball',
+  price: '$120'},{
+  name: 'croissants',
+  price: '$130'}]
+  
+  const [product, setProduct] = useState(initialProduct)
+
+  const handleMenu = (option) =>{
+    setMenu(option)
+  }
+
+  useEffect(()=>{
+    
+  },[])
+
   return (
     <>
-      <section1 className="relative mt-10 mb-15 flex w-full">
-        <div className="mb-5 ml-70 w-120 lg:mt-20 lg:flex lg:flex-col">
-          <h1 className="font-caveat text-7xl font-bold">
+      <section id='home' className="relative pb-25 pt-20 flex w-full overflow-hidden">
+        <div className="mb-5 ml-30 w-170 mt-30 flex flex-col ">
+          <h1 className="font-caveat text-8xl font-bold mt-10">
             Delicious Baked <br></br> Goodness
           </h1>
-          <p className="font-oswald w-120 text-left lg:mt-4 lg:mb-4">
+          <p className="font-oswald w-120 text-left lg:mt-4 lg:mb-5">
             Baked goodness is comfort you can taste: warm, heat in an oven,
             turning simple ingredients into something special
           </p>
@@ -29,27 +48,27 @@ function HomePage() {
           </button>
 
           <img
-            className="absolute right-26 z-[-10] mt-[-100px] h-100 w-180 peer-hover:scale-120 transition duration-500 "
+            className="absolute right-0 z-[-10] mt-[-140px] h-150 w-250 transition duration-500 peer-hover:scale-110"
             src="/image/bigbread.png"
           />
         </div>
-      </section1>
+      </section>
 
-      <section2 className="w-ful mt-30 flex flex-col items-center justify-center">
+      <section id='about' className="w-ful mt-30 pt-25 flex flex-col items-center justify-center">
         <p className="font-caveat text-5xl font-bold">Indulge in tThe Taste</p>
         <p className="font-oswald mt-4 w-100 text-center">
           the kind that makes you slow down, take a deeper bite, and let every
           flavor linger. take a deeper bite, and let every flavor linger
         </p>
         <p></p>
-      </section2>
+      </section>
 
-      <section3 className="relative mt-15 flex min-w-full justify-around space-x-19">
+      <section className="relative mt-5 flex min-w-full justify-around space-x-19">
         <img
           className="absolute top-[-70px] right-95 h-120 w-140 object-contain"
           src="/image/bread basket.png"
         />
-        <leftside className="flex h-110 flex-col justify-between">
+        <div className="flex h-110 flex-col justify-between">
           <div className="flex w-70 flex-col items-center">
             <div className="product-logo">
               <img className="icons-indulge" src={glutenfree} />
@@ -75,9 +94,9 @@ function HomePage() {
               Get a taste of the best quality baked goods today.
             </p>
           </div>
-        </leftside>
+        </div>
 
-        <rightside className="flex h-110 flex-col justify-between">
+        <div className="flex h-110 flex-col justify-between">
           <div className="flex w-70 flex-col items-center">
             <div className="product-logo">
               <img className="icons-indulge" src={chef} />
@@ -103,10 +122,10 @@ function HomePage() {
               Get our delicious baked food fresh out of the oven.
             </p>
           </div>
-        </rightside>
-      </section3>
+        </div>
+      </section>
 
-      <section4 className="m mt-20 flex w-full flex-col items-center">
+      <section id='menu' className="m mt-20 pt-20 flex w-full flex-col items-center">
         <div className="flex w-170 flex-col items-center">
           <p className="font-caveat mt-4 mb-4 text-5xl font-bold">Our Menu</p>
           <p className="font-oswald w-100 text-center">
@@ -115,42 +134,63 @@ function HomePage() {
           </p>
         </div>
 
-        <div className="mt-10 flex w-170 justify-around">
-          <div className="product-logo hover-action">
-            <img className="icons" src={cookie} />
+        <div className="mt-10 flex w-240 justify-around">
+          <div onClick={()=>{handleMenu('cookie')}} className="flex-col space-y-1">
+            <div className="product-logo hover-action peer group">
+              <img className="icons hover-image-action" src={cookie} />
+            </div>
+            <p className={menu === 'cookie'? 'font-oswald text-center transition text-amber-500 peer-hover:text-amber-500': 'font-oswald text-center transition peer-hover:text-amber-500'}>
+              Cookies
+            </p>
           </div>
-          <div className="product-logo hover-action">
-            <img className="icons" src={cake} />
+
+          <div onClick={()=>{handleMenu('cakes')}} className="flex-col space-y-1">
+            <div className="product-logo hover-action peer group">
+              <img className="icons hover-image-action" src={cake} />
+            </div>
+            <p className={menu === 'cakes'? 'font-oswald text-center transition peer-hover:text-amber-500 text-amber-500':'font-oswald text-center transition peer-hover:text-amber-500'}>
+              Cakes
+            </p>
           </div>
-          <div className="product-logo hover-action">
-            <img className="icons" src={cupcake} />
+
+          <div onClick={()=>{handleMenu('pastries')}} className="flex-col space-y-1">
+            <div className="product-logo hover-action peer group">
+              <img className="icons hover-image-action" src={cupcake} />
+            </div>
+            <p className={menu === 'pastries'? 'font-oswald text-center transition peer-hover:text-amber-500 text-amber-500':'font-oswald text-center transition peer-hover:text-amber-500'}>
+              Pastries
+            </p>
           </div>
-          <div className="product-logo hover-action">
-            <img className="icons w-11" src={bread} />
+
+          <div onClick={()=>{handleMenu('bread')}} className="flex-col space-y-1">
+            <div className="product-logo hover-action peer group">
+              <img className="icons w-11 hover-image-action" src={bread} />
+            </div>
+            <p className={menu === 'bread'? 'font-oswald text-center transition peer-hover:text-amber-500 text-amber-500':'font-oswald text-center transition peer-hover:text-amber-500'}>
+              Bread
+            </p>
           </div>
-          <div className="product-logo hover-action">
-            <img className="icons" src={strawberrycake} />
+
+          <div onClick={()=>{handleMenu('cupcakes')}} className="flex-col space-y-1">
+            <div className="product-logo hover-action peer group">
+              <img className="icons hover-image-action" src={strawberrycake} />
+            </div>
+            <p className={menu === 'cupcakes'? 'font-oswald text-center transition peer-hover:text-amber-500 text-amber-500':'font-oswald text-center transition peer-hover:text-amber-500'}>
+              Cupcakes
+            </p>
           </div>
         </div>
 
-        <div className="mt-0 w-170">
-          <ul className="font-oswald flex">
-            <li className="ml-12">Cookies</li>
-            <li className="mr-24 ml-24">Cakes</li>
-            <li>Pastries</li>
-            <li className="mr-24 ml-23">Bread</li>
-            <li>Cupcakes</li>
-          </ul>
-
-          <div className="font-oswald mt-9 flex">
+        <div className="mt-0 w-270">
+          <div className="font-oswald mt-9 flex space-x-20">
             <div className="cart hover-action group relative flex-1 text-center">
               mini cupcake <br></br>$100
               <img
-                className="product-image hover-image-action left-[-10px] w-80 object-cover"
+                className="product-image hover-image-action left-[-10px] w-70"
                 src="/image/cupcake.png"
               />
             </div>
-            <div className="cart hover-action group relative mx-10 flex-1 text-center">
+            <div className="cart hover-action group relative flex-1 text-center">
               fried cheese <br></br>$120
               <img
                 className="product-image hover-image-action top-2"
@@ -166,9 +206,9 @@ function HomePage() {
             </div>
           </div>
         </div>
-      </section4>
+      </section>
 
-      <section5 className="mt-25 flex w-full flex-col items-center">
+      <section id='blog' className="mt-25 pt-20 flex w-full flex-col items-center">
         <div className="flex flex-col items-center">
           <p className="heading">Our Blog</p>
           <p className="font-oswald w-67 text-center">
@@ -176,7 +216,7 @@ function HomePage() {
           </p>
         </div>
 
-        <div className="mt-10 flex">
+        <div className="mt-10 flex w-270">
           <div className="blog-div hover-action h-100 w-80 transition">
             <div className="h-50 w-full overflow-hidden rounded-3xl">
               <img className="mt-[-74px]" src="/image/burger.png" />
@@ -210,9 +250,9 @@ function HomePage() {
             <p className="font-roboto mt-3 ml-4 text-orange-400">Read More</p>
           </div>
         </div>
-      </section5>
+      </section>
 
-      <section6 className="mt-30 flex flex-col items-center">
+      <section id='contact' className="mt-30 pb-10 flex flex-col items-center">
         <div>
           <p className="heading text-center">
             Have Questions? Reach <br></br> Out To us
@@ -244,7 +284,7 @@ function HomePage() {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27507.193460988125!2d80.20866534134562!3d13.03273809265451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267c15401afc1%3A0x7acc871dc8f94f13!2sAshok%20Pillar!5e0!3m2!1sen!2sin!4v1772541040490!5m2!1sen!2sin"
           />
         </div>
-      </section6>
+      </section>
     </>
   );
 }
