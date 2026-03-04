@@ -17,41 +17,40 @@ function HomePage() {
   const initialProduct = [
     {
       name: "Mini Cupcake",
-      price: "$100",
+      price: "₹100",
     },
     {
-      name: "fried cheese ball",
-      price: "$120",
+      name: "Fried Cheese Balls",
+      price: "₹120",
     },
     {
-      name: "croissants",
-      price: "$130",
+      name: "Croissants",
+      price: "₹130",
     },
   ];
 
   const [menuProduct, setMenuProduct] = useState(initialProduct);
 
   const handleMenu = (option) => {
-    setMenu(option);   //achieve the menu changing option by using the handlemenu and the conditional rendering technique 
+    setMenu(option); //achieve the menu changing option by using the handlemenu and the conditional rendering technique
   };
 
   const handleMenuProduct = (option) => {
     if (option == "cookie") {
       setMenuProduct(initialProduct);
-
     } else if (option === "cakes") {
       const updatedOption = [
         {
           name: "Rasmalai Cake",
-          price: "$100",
+          price: "₹100",
         },
         {
           name: "Black Forest",
-          price: "$120",
+          price: "₹120",
         },
         {
           name: "Pistachio Cardamom Rose",
-          price: "$130",
+          price: "₹130",
         },
       ];
 
@@ -60,15 +59,15 @@ function HomePage() {
       const updatedOption = [
         {
           name: "Baklava",
-          price: "$100",
+          price: "₹100",
         },
         {
           name: "Cream puff",
-          price: "$120",
+          price: "₹120",
         },
         {
           name: "Danish pastry",
-          price: "$130",
+          price: "₹130",
         },
       ];
 
@@ -77,15 +76,15 @@ function HomePage() {
       const updatedOption = [
         {
           name: "Multigrain",
-          price: "$100",
+          price: "₹100",
         },
         {
           name: "Focaccia",
-          price: "$120",
+          price: "₹120",
         },
         {
           name: "English muffin",
-          price: "$130",
+          price: "₹130",
         },
       ];
 
@@ -94,22 +93,22 @@ function HomePage() {
       const updatedOption = [
         {
           name: "Classic Vanilla",
-          price: "$100",
+          price: "₹100",
         },
         {
           name: "Salted Caramel",
-          price: "$120",
+          price: "₹120",
         },
         {
           name: "Tiramisu",
-          price: "$130",
+          price: "₹130",
         },
       ];
       setMenuProduct(updatedOption);
     }
   };
 
- /*  useEffect(() => {
+  /*  useEffect(() => {
     console.log(menuProduct);
   }, [menuProduct]); */
 
@@ -152,7 +151,7 @@ function HomePage() {
 
       <section className="relative mt-5 flex min-w-full justify-around space-x-19">
         <img
-          className="absolute top-[-70px] right-95 h-120 w-140 object-contain"
+          className="absolute top-[-70px] right-108 h-120 w-140 object-contain"
           src="/image/bread basket.png"
         />
         <div className="flex h-110 flex-col justify-between">
@@ -230,16 +229,16 @@ function HomePage() {
               handleMenu("cookie");
               handleMenuProduct("cookie");
             }}
-            className="flex-col space-y-1 cursor-pointer group">
-
+            className="group cursor-pointer flex-col space-y-1"
+          >
             <div className="product-logo hover-action-2 peer">
               <img className="icons hover-image-action" src={cookie} />
             </div>
             <p
               className={
                 menu === "cookie"
-                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500 hover-p"
-                  : "font-oswald text-center transition peer-hover:text-amber-50 hover-p"
+                  ? "font-oswald hover-p text-center text-amber-500 transition peer-hover:text-amber-500"
+                  : "font-oswald hover-p text-center transition peer-hover:text-amber-50"
               }
             >
               Cookies
@@ -251,7 +250,7 @@ function HomePage() {
               handleMenu("cakes");
               handleMenuProduct("cakes");
             }}
-            className="flex-col space-y-1 group"
+            className="group flex-col space-y-1"
           >
             <div className="product-logo hover-action-2 peer">
               <img className="icons hover-image-action" src={cake} />
@@ -259,8 +258,8 @@ function HomePage() {
             <p
               className={
                 menu === "cakes"
-                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500 hover-menu"
-                  : "font-oswald text-center transition peer-hover:text-amber-500 hover-menu"
+                  ? "font-oswald hover-menu text-center text-amber-500 transition peer-hover:text-amber-500"
+                  : "font-oswald hover-menu text-center transition peer-hover:text-amber-500"
               }
             >
               Cakes
@@ -272,7 +271,7 @@ function HomePage() {
               handleMenu("pastries");
               handleMenuProduct("pastries");
             }}
-            className="flex-col space-y-1 group"
+            className="group flex-col space-y-1"
           >
             <div className="product-logo hover-action-2 peer">
               <img className="icons hover-image-action" src={cupcake} />
@@ -280,8 +279,8 @@ function HomePage() {
             <p
               className={
                 menu === "pastries"
-                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500 hover-menu"
-                  : "font-oswald text-center transition peer-hover:text-amber-500 hover-menu"
+                  ? "font-oswald hover-menu text-center text-amber-500 transition peer-hover:text-amber-500"
+                  : "font-oswald hover-menu text-center transition peer-hover:text-amber-500"
               }
             >
               Pastries
@@ -293,7 +292,7 @@ function HomePage() {
               handleMenu("bread");
               handleMenuProduct("bread");
             }}
-            className="flex-col space-y-1 group"
+            className="group flex-col space-y-1"
           >
             <div className="product-logo hover-action-2 peer">
               <img className="icons hover-image-action w-11" src={bread} />
@@ -301,8 +300,8 @@ function HomePage() {
             <p
               className={
                 menu === "bread"
-                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500 hover-menu"
-                  : "font-oswald text-center transition peer-hover:text-amber-500 hover-menu"
+                  ? "font-oswald hover-menu text-center text-amber-500 transition peer-hover:text-amber-500"
+                  : "font-oswald hover-menu text-center transition peer-hover:text-amber-500"
               }
             >
               Bread
@@ -314,16 +313,16 @@ function HomePage() {
               handleMenu("cupcakes");
               handleMenuProduct("cupcakes");
             }}
-            className="flex-col space-y-1 group"
+            className="group flex-col space-y-1"
           >
-            <div className="product-logo hover-action-2 peer ">
+            <div className="product-logo hover-action-2 peer">
               <img className="icons hover-image-action" src={strawberrycake} />
             </div>
             <p
               className={
                 menu === "cupcakes"
-                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500 hover-menu"
-                  : "font-oswald text-center transition peer-hover:text-amber-500 hover-menu"
+                  ? "font-oswald hover-menu text-center text-amber-500 transition peer-hover:text-amber-500"
+                  : "font-oswald hover-menu text-center transition peer-hover:text-amber-500"
               }
             >
               Cupcakes
@@ -333,10 +332,13 @@ function HomePage() {
 
         <div className="mt-0 w-270">
           <div className="font-oswald mt-9 flex space-x-20">
-            {menuProduct.map((products,index) => {
+            {menuProduct.map((products, index) => {
               return (
-                <div key={index} className="cart hover-action group relative flex-1 text-center">
-                  {products.name} <br></br>$100
+                <div
+                  key={index}
+                  className="cart hover-action group relative flex-1 text-center"
+                >
+                  {products.name} <br></br>{products.price}
                   <img
                     className="product-image hover-image-action w-70"
                     src={`/image/${products.name}.png`}
@@ -429,19 +431,27 @@ function HomePage() {
         </div>
 
         <div className="mt-15 flex items-center">
-          <div className="font-oswald mr-13 grid grid-cols-[30%_70%] items-center gap-x-2 gap-y-4">
-            <div className="logo-div">
-              <i class="fa-solid fa-envelope text-xl text-white"></i>
-            </div>
-            <p className="">contact@gmail.com</p>
-            <div className="logo-div">
-              <i class="fa-solid fa-phone text-xl text-white"></i>
-            </div>
-            <p className="">+84 273873534</p>
+          <div className="font-oswald mr-13 grid grid-cols-[30%_70%] items-center  gap-y-4">
+            <a href="mailto: sakashcsbs2004@gmail.com">
+              <div className="logo-div cursor-pointer">
+                <i class="fa-solid fa-envelope text-xl text-white"></i>
+              </div>
+            </a>
+            <a href="mailto: sakashcsbs2004@gmail.com">
+              <p className="">sakashcsbs2004@gmail.com</p>
+            </a>
+            <a href="tel: +916383283581">
+              <div className="logo-div">
+                <i class="fa-solid fa-phone text-xl text-white"></i>
+              </div>
+            </a>
+            <a href="tel: +916383283581">
+              <p className="">+91 6383283581</p>
+            </a>
             <div className="logo-div">
               <i class="fa-solid fa-location-arrow text-xl text-white"></i>
             </div>
-            <p>62th , avenue galendale , usa</p>
+            <p className="w-40">Grand Souther Trunk Rd,<br></br>Ashok Pillar,<br></br> Chennai-600048</p>
           </div>
 
           <iframe
