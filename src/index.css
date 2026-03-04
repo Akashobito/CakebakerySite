@@ -2,29 +2,48 @@
 
 @layer base {
   body {
-    @apply pb-20
+    @apply pb-20;
   }
 }
 
 @theme {
-  --font-caveat: 'caveat variable';
-  --font-lobster: 'lobster';
-  --font-roboto: 'roboto';
-  --font-exo2: 'Exo 2 variable';
-  --font-oswald: 'Oswald Variable', sans-serif;
+  --font-caveat: "caveat variable";
+  --font-lobster: "lobster";
+  --font-roboto: "roboto";
+  --font-exo2: "Exo 2 variable";
+  --font-oswald: "Oswald Variable", sans-serif;
 }
 
 @layer components {
   .cart {
-    @apply pb-7 h-70 bg-slate-100 flex justify-around items-end rounded-2xl;
+    @apply flex h-70 items-end justify-around rounded-2xl bg-slate-100 pb-7 shadow-xl;
   }
   .heading {
-    @apply font-caveat text-5xl font-bold mt-4 mb-4;
+    @apply font-caveat mt-4 mb-4 text-5xl font-bold;
   }
   .product-logo {
-    @apply w-15 h-15 bg-amber-400 rounded-full
+    @apply flex h-15 w-15 items-center justify-center rounded-full bg-amber-100;
   }
   .product-image {
-    @apply absolute w-45 h-45 object-contain top-0
+    @apply absolute top-0 h-45 w-45 object-contain;
+  }
+  .blog-div {
+    @apply rounded-3xl shadow-xl;
+  }
+  .logo-div {
+    @apply flex h-15 w-15 items-center justify-center rounded-full bg-amber-500;
+  }
+  .icons {
+    @apply h-10 w-9 object-contain;
+  }
+
+  .icons-indulge {
+    @apply h-10 w-10 object-contain;
+  }
+  .hover-action {
+    @apply transition ease-in-out hover:scale-110 cursor-pointer;
+  }
+  .hover-image-action {
+    @apply transition duration-[500ms] group-hover:scale-110;
   }
 }

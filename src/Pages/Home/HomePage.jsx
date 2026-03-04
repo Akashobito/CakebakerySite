@@ -2,31 +2,40 @@ import React from "react";
 import "@fontsource/lobster";
 import "@fontsource-variable/caveat";
 import "@fontsource-variable/oswald";
+import cake from "../../assets/icons/cake.png";
+import bread from "../../assets/icons/bread.png";
+import cookie from "../../assets/icons/cookie.png";
+import cupcake from "../../assets/icons/cupcake.png";
+import strawberrycake from "../../assets/icons/strawberry-cake.png";
+import chef from "../../assets/icons/chef.png";
+import glutenfree from "../../assets/icons/gluten-free.png";
+import ingredients from "../../assets/icons/dairy-food.png";
+import tasty from "../../assets/icons/burger image.png";
 
 function HomePage() {
   return (
     <>
-      <section1 className="relative mb-15 flex w-full">
-        <div className="mb-5 ml-70 lg:mt-20 lg:flex lg:w-[50vw] lg:flex-col">
+      <section1 className="relative mt-10 mb-15 flex w-full">
+        <div className="mb-5 ml-70 w-120 lg:mt-20 lg:flex lg:flex-col">
           <h1 className="font-caveat text-7xl font-bold">
             Delicious Baked <br></br> Goodness
           </h1>
-          <p className="font-oswald w-130 text-left lg:mt-4 lg:mb-4">
+          <p className="font-oswald w-120 text-left lg:mt-4 lg:mb-4">
             Baked goodness is comfort you can taste: warm, heat in an oven,
             turning simple ingredients into something special
           </p>
-          <button className="font-exo2 bg-orange-400 px-[35px] py-[10px] text-white lg:w-[160px]">
+          <button className="font-exo2 peer bg-orange-400 px-[35px] py-[10px] text-white hover:cursor-pointer lg:w-[160px]">
             Shop now
           </button>
-        </div>
 
-        <img
-          className="absolute right-26 z-[-10] mt-[-20px] h-100 w-180"
-          src="/image/bigbread.png"
-        />
+          <img
+            className="absolute right-26 z-[-10] mt-[-100px] h-100 w-180 peer-hover:scale-120 transition duration-500 "
+            src="/image/bigbread.png"
+          />
+        </div>
       </section1>
 
-      <section2 className="w-ful flex flex-col items-center justify-center">
+      <section2 className="w-ful mt-30 flex flex-col items-center justify-center">
         <p className="font-caveat text-5xl font-bold">Indulge in tThe Taste</p>
         <p className="font-oswald mt-4 w-100 text-center">
           the kind that makes you slow down, take a deeper bite, and let every
@@ -40,50 +49,58 @@ function HomePage() {
           className="absolute top-[-70px] right-95 h-120 w-140 object-contain"
           src="/image/bread basket.png"
         />
-        <leftside className="flex h-100 flex-col justify-between">
-          <div className="w-70">
+        <leftside className="flex h-110 flex-col justify-between">
+          <div className="flex w-70 flex-col items-center">
+            <div className="product-logo">
+              <img className="icons-indulge" src={glutenfree} />
+            </div>
             <p className="font-caveat mb-3 text-center text-2xl font-bold">
               Gluten Free Food
             </p>
             <p className="font-oswald text-center">
-              Gluten‑free food is food that doesn’t contain gluten, a group of
-              proteins found in wheat, barley, and rye (and grains made from
-              them, like triticale)
+              Everything on our menu has gluten free options for you. Healthy
+              food has neveer tasted better. try it today.
             </p>
           </div>
 
-          <div className="w-70">
+          <div className="flex w-70 flex-col items-center">
+            <div className="product-logo">
+              <img className="icons-indulge" src={ingredients} />
+            </div>
             <p className="font-caveat mb-3 text-center text-2xl font-bold">
               Fresh Ingrediants
             </p>
             <p className="font-oswald text-center">
-              Fresh ingredients are foods that are as close to their natural
-              state as possible—like just-picked fruits and vegetables, fresh
-              herbs texture in a dish
+              We use only fresh ingredients from local suppliers for our food.
+              Get a taste of the best quality baked goods today.
             </p>
           </div>
         </leftside>
 
-        <rightside className="flex h-100 flex-col justify-between">
-          <div className="w-70">
+        <rightside className="flex h-110 flex-col justify-between">
+          <div className="flex w-70 flex-col items-center">
+            <div className="product-logo">
+              <img className="icons-indulge" src={chef} />
+            </div>
             <p className="font-caveat mb-3 text-center text-2xl font-bold">
-              Gluten Free Food
+              Homemade Bread
             </p>
             <p className="font-oswald text-center">
-              Gluten‑free food is food that doesn’t contain gluten, a group of
-              proteins found in wheat, barley, and rye (and grains made from
-              them, like triticale)
+              Tease the best, oven fresh gourmet homemade bread , cookies, ckes,
+              pastries, cutomized cakes, cream rolls and much more.
             </p>
           </div>
 
-          <div className="w-70">
+          <div className="flex w-70 flex-col items-center">
+            <div className="product-logo">
+              <img className="icons-indulge w-12 object-cover" src={tasty} />
+            </div>
             <p className="font-caveat mb-3 text-center text-2xl font-bold">
-              Fresh Ingrediants
+              Healthy & Tasty
             </p>
             <p className="font-oswald text-center">
-              Fresh ingredients are foods that are as close to their natural
-              state as possible—like just-picked fruits and vegetables, fresh
-              herbs texture in a dish
+              Live a healthier life with freshly baked food that tastes good.
+              Get our delicious baked food fresh out of the oven.
             </p>
           </div>
         </rightside>
@@ -99,43 +116,59 @@ function HomePage() {
         </div>
 
         <div className="mt-10 flex w-170 justify-around">
-          <div className="product-logo"></div>
-          <div className="product-logo"></div>
-          <div className="product-logo"></div>
-          <div className="product-logo"></div>
-          <div className="product-logo"></div>
+          <div className="product-logo hover-action">
+            <img className="icons" src={cookie} />
+          </div>
+          <div className="product-logo hover-action">
+            <img className="icons" src={cake} />
+          </div>
+          <div className="product-logo hover-action">
+            <img className="icons" src={cupcake} />
+          </div>
+          <div className="product-logo hover-action">
+            <img className="icons w-11" src={bread} />
+          </div>
+          <div className="product-logo hover-action">
+            <img className="icons" src={strawberrycake} />
+          </div>
         </div>
 
         <div className="mt-0 w-170">
           <ul className="font-oswald flex">
             <li className="ml-12">Cookies</li>
-            <li className="mr-24 ml-24">Cakse</li>
+            <li className="mr-24 ml-24">Cakes</li>
             <li>Pastries</li>
             <li className="mr-24 ml-23">Bread</li>
             <li>Cupcakes</li>
           </ul>
 
           <div className="font-oswald mt-9 flex">
-            <div className="cart relative flex-1 text-center">
+            <div className="cart hover-action group relative flex-1 text-center">
               mini cupcake <br></br>$100
               <img
-                className="product-image left-[-10px] w-80 object-cover"
+                className="product-image hover-image-action left-[-10px] w-80 object-cover"
                 src="/image/cupcake.png"
               />
             </div>
-            <div className="cart relative mx-6 flex-1 text-center">
+            <div className="cart hover-action group relative mx-10 flex-1 text-center">
               fried cheese <br></br>$120
-              <img className="product-image top-2" src="/image/products.png" />
+              <img
+                className="product-image hover-image-action top-2"
+                src="/image/products.png"
+              />
             </div>
-            <div className="cart relative flex-1 text-center">
+            <div className="cart hover-action group relative flex-1 text-center">
               croissants <br></br>$130
-              <img className="product-image" src="/image/bread.png" />
+              <img
+                className="product-image hover-image-action"
+                src="/image/bread.png"
+              />
             </div>
           </div>
         </div>
       </section4>
 
-      <section5 className="mt-15 flex w-full flex-col items-center">
+      <section5 className="mt-25 flex w-full flex-col items-center">
         <div className="flex flex-col items-center">
           <p className="heading">Our Blog</p>
           <p className="font-oswald w-67 text-center">
@@ -144,34 +177,34 @@ function HomePage() {
         </div>
 
         <div className="mt-10 flex">
-          <div className="h-100 w-80">
+          <div className="blog-div hover-action h-100 w-80 transition">
             <div className="h-50 w-full overflow-hidden rounded-3xl">
               <img className="mt-[-74px]" src="/image/burger.png" />
             </div>
             <p className="font-roboto mt-4 ml-4 w-70">
-              Our Top % Tips For Baking The Perfect, Flaky Croissant{" "}
+              Our Top % Tips For Baking The Perfect, Flaky Croissant
             </p>
             <p className="mt-6 ml-4 text-gray-400">On December 11, 2026</p>
             <p className="font-roboto mt-3 ml-4 text-orange-400">Read More</p>
           </div>
 
-          <div className="mx-10 h-100 w-80">
+          <div className="blog-div hover-action mx-10 h-100 w-80 transition">
             <div className="h-50 w-full overflow-hidden rounded-3xl">
               <img className="h-50 w-full" src="/image/food2.jpg" />
             </div>
             <p className="font-roboto mt-4 ml-4 w-70">
-              Our Top % Tips For Baking The Perfect, Flaky Croissant{" "}
+              Baking For Beginners: Things To Know About Kneading
             </p>
             <p className="mt-6 ml-4 text-gray-400">On December 11, 2026</p>
             <p className="font-roboto mt-3 ml-4 text-orange-400">Read More</p>
           </div>
 
-          <div className="h-100 w-80">
+          <div className="blog-div hover-action h-100 w-80 transition">
             <div className="h-50 w-full overflow-hidden rounded-3xl bg-red-200">
               <img className="h-50 w-full" src="/image/food3.jpg" />
             </div>
             <p className="font-roboto mt-4 ml-4 w-70">
-              Our Top % Tips For Baking The Perfect, Flaky Croissant{" "}
+              Guide To Gluten Free Life: 16 Recepe And Ourt Top Tips
             </p>
             <p className="mt-6 ml-4 text-gray-400">On December 11, 2026</p>
             <p className="font-roboto mt-3 ml-4 text-orange-400">Read More</p>
@@ -179,7 +212,7 @@ function HomePage() {
         </div>
       </section5>
 
-      <section6 className="mt-8 flex flex-col items-center">
+      <section6 className="mt-30 flex flex-col items-center">
         <div>
           <p className="heading text-center">
             Have Questions? Reach <br></br> Out To us
@@ -191,9 +224,18 @@ function HomePage() {
         </div>
 
         <div className="mt-15 flex items-center">
-          <div className="font-oswald mr-20">
-            <p>contact@gmail.com</p>
-            <p className="my-10">+84 273873534</p>
+          <div className="font-oswald mr-13 grid grid-cols-[30%_70%] items-center gap-x-2 gap-y-4">
+            <div className="logo-div">
+              <i class="fa-solid fa-envelope text-xl text-white"></i>
+            </div>
+            <p className="">contact@gmail.com</p>
+            <div className="logo-div">
+              <i class="fa-solid fa-phone text-xl text-white"></i>
+            </div>
+            <p className="">+84 273873534</p>
+            <div className="logo-div">
+              <i class="fa-solid fa-location-arrow text-xl text-white"></i>
+            </div>
             <p>62th , avenue galendale , usa</p>
           </div>
 
