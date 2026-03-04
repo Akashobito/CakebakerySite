@@ -34,7 +34,7 @@ function Navbar() {
           }}
           href="#about"
         >
-          <li className={pageTrack === 'about'? 'text-amber-500':''}>ABOUTUS</li>
+          <li className={pageTrack === 'about'? 'text-amber-500':''}>ABOUT</li>
         </a>
 
         <a

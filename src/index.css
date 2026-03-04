@@ -44,7 +44,13 @@
   .hover-action {
     @apply transition ease-in-out hover:scale-110 cursor-pointer;
   }
+  .hover-action-2 {
+    @apply transition ease-in-out group-hover:scale-110 cursor-pointer;
+  }
   .hover-image-action {
     @apply transition duration-[500ms] group-hover:scale-110;
+  }
+  .hover-menu {
+    @apply group-hover:text-amber-500 cursor-pointer
   }
 }

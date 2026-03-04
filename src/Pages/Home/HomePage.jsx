@@ -32,12 +32,13 @@ function HomePage() {
   const [menuProduct, setMenuProduct] = useState(initialProduct);
 
   const handleMenu = (option) => {
-    setMenu(option);
+    setMenu(option);   //achieve the menu changing option by using the handlemenu and the conditional rendering technique 
   };
 
   const handleMenuProduct = (option) => {
     if (option == "cookie") {
-      console.log(initialProduct);
+      setMenuProduct(initialProduct);
+
     } else if (option === "cakes") {
       const updatedOption = [
         {
@@ -55,7 +56,6 @@ function HomePage() {
       ];
 
       setMenuProduct(updatedOption);
-      
     } else if (option === "pastries") {
       const updatedOption = [
         {
@@ -73,7 +73,6 @@ function HomePage() {
       ];
 
       setMenuProduct(updatedOption);
-      
     } else if (option === "bread") {
       const updatedOption = [
         {
@@ -89,9 +88,8 @@ function HomePage() {
           price: "$130",
         },
       ];
-      
+
       setMenuProduct(updatedOption);
-      
     } else if (option === "cupcakes") {
       const updatedOption = [
         {
@@ -111,9 +109,9 @@ function HomePage() {
     }
   };
 
-  useEffect(() => {
+ /*  useEffect(() => {
     console.log(menuProduct);
-  }, [menuProduct]);
+  }, [menuProduct]); */
 
   return (
     <>
@@ -232,16 +230,16 @@ function HomePage() {
               handleMenu("cookie");
               handleMenuProduct("cookie");
             }}
-            className="flex-col space-y-1"
-          >
-            <div className="product-logo hover-action peer group">
+            className="flex-col space-y-1 cursor-pointer group">
+
+            <div className="product-logo hover-action-2 peer">
               <img className="icons hover-image-action" src={cookie} />
             </div>
             <p
               className={
                 menu === "cookie"
-                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500"
-                  : "font-oswald text-center transition peer-hover:text-amber-500"
+                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500 hover-p"
+                  : "font-oswald text-center transition peer-hover:text-amber-50 hover-p"
               }
             >
               Cookies
@@ -253,16 +251,16 @@ function HomePage() {
               handleMenu("cakes");
               handleMenuProduct("cakes");
             }}
-            className="flex-col space-y-1"
+            className="flex-col space-y-1 group"
           >
-            <div className="product-logo hover-action peer group">
+            <div className="product-logo hover-action-2 peer">
               <img className="icons hover-image-action" src={cake} />
             </div>
             <p
               className={
                 menu === "cakes"
-                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500"
-                  : "font-oswald text-center transition peer-hover:text-amber-500"
+                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500 hover-menu"
+                  : "font-oswald text-center transition peer-hover:text-amber-500 hover-menu"
               }
             >
               Cakes
@@ -274,16 +272,16 @@ function HomePage() {
               handleMenu("pastries");
               handleMenuProduct("pastries");
             }}
-            className="flex-col space-y-1"
+            className="flex-col space-y-1 group"
           >
-            <div className="product-logo hover-action peer group">
+            <div className="product-logo hover-action-2 peer">
               <img className="icons hover-image-action" src={cupcake} />
             </div>
             <p
               className={
                 menu === "pastries"
-                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500"
-                  : "font-oswald text-center transition peer-hover:text-amber-500"
+                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500 hover-menu"
+                  : "font-oswald text-center transition peer-hover:text-amber-500 hover-menu"
               }
             >
               Pastries
@@ -295,16 +293,16 @@ function HomePage() {
               handleMenu("bread");
               handleMenuProduct("bread");
             }}
-            className="flex-col space-y-1"
+            className="flex-col space-y-1 group"
           >
-            <div className="product-logo hover-action peer group">
+            <div className="product-logo hover-action-2 peer">
               <img className="icons hover-image-action w-11" src={bread} />
             </div>
             <p
               className={
                 menu === "bread"
-                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500"
-                  : "font-oswald text-center transition peer-hover:text-amber-500"
+                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500 hover-menu"
+                  : "font-oswald text-center transition peer-hover:text-amber-500 hover-menu"
               }
             >
               Bread
@@ -316,16 +314,16 @@ function HomePage() {
               handleMenu("cupcakes");
               handleMenuProduct("cupcakes");
             }}
-            className="flex-col space-y-1"
+            className="flex-col space-y-1 group"
           >
-            <div className="product-logo hover-action peer group">
+            <div className="product-logo hover-action-2 peer ">
               <img className="icons hover-image-action" src={strawberrycake} />
             </div>
             <p
               className={
                 menu === "cupcakes"
-                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500"
-                  : "font-oswald text-center transition peer-hover:text-amber-500"
+                  ? "font-oswald text-center text-amber-500 transition peer-hover:text-amber-500 hover-menu"
+                  : "font-oswald text-center transition peer-hover:text-amber-500 hover-menu"
               }
             >
               Cupcakes
@@ -335,27 +333,39 @@ function HomePage() {
 
         <div className="mt-0 w-270">
           <div className="font-oswald mt-9 flex space-x-20">
-            <div className="cart hover-action group relative flex-1 text-center">
+            {menuProduct.map((products,index) => {
+              return (
+                <div key={index} className="cart hover-action group relative flex-1 text-center">
+                  {products.name} <br></br>$100
+                  <img
+                    className="product-image hover-image-action w-70"
+                    src={`/image/${products.name}.png`}
+                  />
+                </div>
+              );
+            })}
+
+            {/* <div className="cart hover-action group relative flex-1 text-center">
               mini cupcake <br></br>$100
               <img
                 className="product-image hover-image-action left-[-10px] w-70"
-                src="/image/cupcake.png"
+                src="/image/Mini Cupcake.png"
               />
             </div>
             <div className="cart hover-action group relative flex-1 text-center">
               fried cheese <br></br>$120
               <img
                 className="product-image hover-image-action top-2"
-                src="/image/products.png"
+                src="/image/fried cheese ball.png"
               />
             </div>
             <div className="cart hover-action group relative flex-1 text-center">
               croissants <br></br>$130
               <img
                 className="product-image hover-image-action"
-                src="/image/bread.png"
+                src="/image/croissants.png"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
