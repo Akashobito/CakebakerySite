@@ -18,7 +18,7 @@ function Navbar() {
         <img className="mt-2 h-12 w-12" src="/image/foodcompanylogo.png" />
       </div>
 
-      <ul className="font-roboto mt-3 flex w-160 mobile:w-90 justify-evenly p-2.5 [&_li]:cursor-pointer mobile:text-sm">
+      <ul className="font-Roboto mt-3 flex w-160 mobile:w-90 justify-evenly p-2.5 [&_li]:cursor-pointer mobile:text-sm">
         <a
           onClick={() => {
             handleUrl("home");

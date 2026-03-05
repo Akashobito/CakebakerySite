@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "@fontsource/lobster";
 import "@fontsource-variable/caveat";
 import "@fontsource-variable/oswald";
+import '@fontsource-variable/roboto';
 
 import Home from "./Home";
 import About from "./About";

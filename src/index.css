@@ -11,11 +11,12 @@
 }
 
 @theme {
-  --font-caveat: "caveat variable";
-  --font-lobster: "lobster";
-  --font-roboto: "roboto";
-  --font-exo2: "Exo 2 variable";
+  --font-caveat: "caveat variable",sans-serif;
+  --font-lobster: "lobster",sans-serif;
+  --font-roboto: "roboto",sans-serif;
+  --font-exo2: "Exo 2 variable",sans-serif;
   --font-oswald: "Oswald Variable", sans-serif;
+  --font-Roboto: "Roboto Variable", sans-serif;
 }
 
 @layer components {

@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource-variable/caveat": "^5.2.8",
     "@fontsource-variable/oswald": "^5.2.8",
+    "@fontsource-variable/roboto": "^5.2.10",
     "@fontsource/lobster": "^5.2.8",
     "@tailwindcss/vite": "^4.2.1",
     "react": "^19.2.0",
