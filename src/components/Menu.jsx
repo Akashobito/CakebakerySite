@@ -104,16 +104,16 @@ function Menu() {
   return (
     <section
       id="menu"
-      className="m mt-20 flex w-full flex-col items-center pt-20"
+      className=" mt-20 flex w-full flex-col items-center pt-20 mobile:pt-15 mobile:mt-0"
     >
-      <div className="flex w-170 flex-col items-center">
+      <div className="flex w-170 flex-col items-center mobile:w-full">
         <p className="font-caveat mt-4 mb-4 text-5xl font-bold">Our Menu</p>
-        <p className="font-oswald w-100 text-center">
+        <p className="font-oswald w-100 text-center mobile:text-sm mobile:w-70">
           Browse throughh our delectable menu of tasty treats and baked goodies
         </p>
       </div>
 
-      <div className="mt-10 flex w-240 justify-around">
+      <div className="mt-10 flex w-240 justify-around mobile:w-full">
         <div
           onClick={() => {
             handleMenu("cakes");
@@ -121,14 +121,14 @@ function Menu() {
           }}
           className="group flex-col space-y-1"
         >
-          <div className="product-logo hover-action-2 peer">
+          <div className="product-logo hover-action-2 peer relative">
             <img className="icons hover-image-action" src={cake} />
           </div>
           <p
             className={
               menuFinder === "cakes"
-                ? "font-oswald hover-menu text-center text-amber-500 transition peer-hover:text-amber-500"
-                : "font-oswald hover-menu text-center transition peer-hover:text-amber-500"
+                ? "font-oswald hover-menu text-center text-amber-500 transition peer-hover:text-amber-500 mobile:text-sm"
+                : "font-oswald hover-menu text-center transition peer-hover:text-amber-500 mobile:text-sm"
             }
           >
             Cakes
@@ -142,14 +142,14 @@ function Menu() {
           }}
           className="group cursor-pointer flex-col space-y-1"
         >
-          <div className="product-logo hover-action-2 peer">
+          <div className="product-logo hover-action-2 peer relative">
             <img className="icons hover-image-action" src={cookie} />
           </div>
           <p
             className={
               menuFinder === "cookie"
-                ? "font-oswald hover-p text-center text-amber-500 transition peer-hover:text-amber-500"
-                : "font-oswald hover-p text-center transition peer-hover:text-amber-500"
+                ? "font-oswald hover-p text-center text-amber-500 transition peer-hover:text-amber-500 mobile:text-sm"
+                : "font-oswald hover-p text-center transition peer-hover:text-amber-500 mobile:text-sm"
             }
           >
             Cookies
@@ -163,14 +163,14 @@ function Menu() {
           }}
           className="group flex-col space-y-1"
         >
-          <div className="product-logo hover-action-2 peer">
+          <div className="product-logo hover-action-2 peer relative">
             <img className="icons hover-image-action" src={cupcake} />
           </div>
           <p
             className={
               menuFinder === "pastries"
-                ? "font-oswald hover-menu text-center text-amber-500 transition peer-hover:text-amber-500"
-                : "font-oswald hover-menu text-center transition peer-hover:text-amber-500"
+                ? "font-oswald hover-menu text-center text-amber-500 transition peer-hover:text-amber-500 mobile:text-sm"
+                : "font-oswald hover-menu text-center transition peer-hover:text-amber-500 mobile:text-sm"
             }
           >
             Pastries
@@ -184,14 +184,14 @@ function Menu() {
           }}
           className="group flex-col space-y-1"
         >
-          <div className="product-logo hover-action-2 peer">
-            <img className="icons hover-image-action w-11" src={bread} />
+          <div className="product-logo hover-action-2 peer relative">
+            <img className="icons hover-image-action w-12 ml-0.5" src={bread} />
           </div>
           <p
             className={
               menuFinder === "bread"
-                ? "font-oswald hover-menu text-center text-amber-500 transition peer-hover:text-amber-500"
-                : "font-oswald hover-menu text-center transition peer-hover:text-amber-500"
+                ? "font-oswald hover-menu text-center text-amber-500 transition peer-hover:text-amber-500 mobile:text-sm"
+                : "font-oswald hover-menu text-center transition peer-hover:text-amber-500 mobile:text-sm"
             }
           >
             Bread
@@ -205,14 +205,14 @@ function Menu() {
           }}
           className="group flex-col space-y-1"
         >
-          <div className="product-logo hover-action-2 peer">
+          <div className="product-logo hover-action-2 peer relative">
             <img className="icons hover-image-action" src={strawberrycake} />
           </div>
           <p
             className={
               menuFinder === "cupcakes"
-                ? "font-oswald hover-menu text-center text-amber-500 transition peer-hover:text-amber-500"
-                : "font-oswald hover-menu text-center transition peer-hover:text-amber-500"
+                ? "font-oswald hover-menu text-center text-amber-500 transition peer-hover:text-amber-500 mobile:text-sm"
+                : "font-oswald hover-menu text-center transition peer-hover:text-amber-500 mobile:text-sm"
             }
           >
             Cupcakes
@@ -220,13 +220,13 @@ function Menu() {
         </div>
       </div>
 
-      <div className="mt-0 w-270">
-        <div className="font-oswald mt-9 flex space-x-20">
+      <div className="mt-0 w-270 mobile:w-full">
+        <div className="font-oswald mt-9 flex space-x-20 mobile:flex-col mobile:space-x-0 mobile:items-center mobile:h-210 mobile:gap-y-10">
           {menuProduct.map((products, index) => {
             return (
               <div
                 key={index}
-                className="cart hover-action group relative flex-1 text-center"
+                className="cart hover-action group relative flex-1 text-center mobile:text-sm"
               >
                 {products.name} <br></br>
                 {products.price}

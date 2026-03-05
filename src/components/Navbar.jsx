@@ -13,12 +13,12 @@ function Navbar() {
   }, []);
 
   return (
-    <div className="fixed top-0 right-0 left-0 z-[100] flex justify-center backdrop-blur-[5px]">
-      <div className="flex w-100 items-center justify-center">
+    <div className="fixed top-0 right-0 left-0 z-[100] flex justify-center backdrop-blur-[5px] mobile:w-full mobile:justify-start mobile:pt-0">
+      <div className="flex w-100 mobile:w-20 items-center justify-center">
         <img className="mt-2 h-12 w-12" src="/image/foodcompanylogo.png" />
       </div>
 
-      <ul className="font-roboto mt-3 flex w-160 justify-evenly p-2.5 [&_li]:cursor-pointer">
+      <ul className="font-roboto mt-3 flex w-160 mobile:w-90 justify-evenly p-2.5 [&_li]:cursor-pointer mobile:text-sm">
         <a
           onClick={() => {
             handleUrl("home");

@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
+@custom-variant mobile (@media (max-width: 600px));   /*custom breakpoint using max-width for focus on mobile*/
+
 @layer base {
   html {
     scroll-behavior: smooth;
     scrollbar-width: none;
   }
+
 }
 
 @theme {
@@ -17,7 +20,7 @@
 
 @layer components {
   .cart {
-    @apply flex h-70 items-end justify-around rounded-2xl bg-slate-100 pb-7 shadow-xl;
+    @apply flex h-70 items-end justify-around rounded-2xl bg-slate-100 pb-7 shadow-xl mobile:w-55;
   }
   .heading {
     @apply font-caveat mt-4 mb-4 text-5xl font-bold;
@@ -32,12 +35,11 @@
     @apply rounded-3xl shadow-xl;
   }
   .logo-div {
-    @apply flex h-15 w-15 items-center justify-center rounded-full bg-amber-500;
+    @apply flex h-15 w-15 items-center justify-center rounded-full bg-amber-500 mobile:w-9 mobile:h-9;
   }
   .icons {
-    @apply h-10 w-9 object-contain;
+    @apply h-10 w-9 object-contain absolute top-0 mt-2 z-10;
   }
-
   .icons-indulge {
     @apply h-10 w-10 object-contain;
   }
@@ -53,4 +55,5 @@
   .hover-menu {
     @apply group-hover:text-amber-500 cursor-pointer
   }
+
 }
