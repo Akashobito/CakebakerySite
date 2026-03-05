@@ -4,21 +4,21 @@ import bread from "../assets/icons/bread.png";
 import cookie from "../assets/icons/cookie.png";
 import cupcake from "../assets/icons/cupcake.png";
 import strawberrycake from "../assets/icons/strawberry-cake.png";
-import '../../public/image/Baklava.png';
-import '../../public/image/Black Forest.png';
-import '../../public/image/Classic Vanilla.png';
-import '../../public/image/Cream puff.png';
-import '../../public/image/Croissants.png';
-import '../../public/image/Danish pastry.png';
-import '../../public/image/English muffin.png';
-import '../../public/image/Focaccia.png';
-import '../../public/image/Fried Cheese Balls.png';
-import '../../public/image/Mini Cupcake.png';
-import '../../public/image/Multigrain.png';
-import '../../public/image/Pistachio Cardamom Rose.png';
-import '../../public/image/Rasmalai Cake.png';
-import '../../public/image/Salted Caramel.png';
-import '../../public/image/Tiramisu.png';
+import baklava from '../../public/image/Baklava.png';
+import blackForest from '../../public/image/Black Forest.png';
+import classicVanilla from  '../../public/image/Classic Vanilla.png';
+import creamPuff from '../../public/image/Cream puff.png';
+import croissants from '../../public/image/Croissants.png';
+import danishPastry from '../../public/image/Danish pastry.png';
+import englishMuffin from '../../public/image/English muffin.png';
+import focaccia from  '../../public/image/Focaccia.png';
+import friedCheeseBalls from '../../public/image/Fried Cheese Balls.png';
+import miniCupcake from  '../../public/image/Mini Cupcake.png';
+import multigrain from '../../public/image/Multigrain.png';
+import pistachio from  '../../public/image/Pistachio Cardamom Rose.png';
+import rasmalai from '../../public/image/Rasmalai Cake.png';
+import saltedCaramel from '../../public/image/Salted Caramel.png';
+import tiramisu from '../../public/image/Tiramisu.png';
 
 function Menu() {
   const [menuFinder, setMenuFinder] = useState("cakes");
@@ -121,6 +121,22 @@ function Menu() {
       id="menu"
       className=" mt-20 flex w-full flex-col items-center pt-20 mobile:pt-15 mobile:mt-0"
     >
+      <img className="hidden" src={baklava}/>
+      <img className="hidden" src={blackForest}/>
+      <img className="hidden" src={classicVanilla}/>
+      <img className="hidden" src={creamPuff}/>
+      <img className="hidden" src={croissants}/>
+      <img className="hidden" src={danishPastry}/>
+      <img className="hidden" src={englishMuffin}/>
+      <img className="hidden" src={focaccia}/>
+      <img className="hidden" src={friedCheeseBalls}/>
+      <img className="hidden" src={miniCupcake}/>
+      <img className="hidden" src={multigrain}/>
+      <img className="hidden" src={pistachio}/>
+      <img className="hidden" src={rasmalai}/>
+      <img className="hidden" src={saltedCaramel}/>
+      <img className="hidden" src={tiramisu}/>
+
       <div className="flex w-170 flex-col items-center mobile:w-full">
         <p className="font-caveat mt-4 mb-4 text-5xl font-bold">Our Menu</p>
         <p className="font-oswald w-100 text-center mobile:text-sm mobile:w-70">
