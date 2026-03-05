@@ -13,18 +13,18 @@ import ingredients from "../../assets/icons/dairy-food.png";
 import tasty from "../../assets/icons/burger image.png";
 
 function HomePage() {
-  const [menu, setMenu] = useState("cookie");
+  const [menu, setMenu] = useState("cakes");
   const initialProduct = [
     {
-      name: "Mini Cupcake",
+      name: "Rasmalai Cake",
       price: "₹100",
     },
     {
-      name: "Fried Cheese Balls",
+      name: "Black Forest",
       price: "₹120",
     },
     {
-      name: "Croissants",
+      name: "Pistachio Cardamom Rose",
       price: "₹130",
     },
   ];
@@ -36,20 +36,20 @@ function HomePage() {
   };
 
   const handleMenuProduct = (option) => {
-    if (option == "cookie") {
+    if (option == "cakes") {
       setMenuProduct(initialProduct);
-    } else if (option === "cakes") {
+    } else if (option === "cookie") {
       const updatedOption = [
         {
-          name: "Rasmalai Cake",
+          name: "Mini Cupcake",
           price: "₹100",
         },
         {
-          name: "Black Forest",
+          name: "Fried Cheese Balls",
           price: "₹120",
         },
         {
-          name: "Pistachio Cardamom Rose",
+          name: "Croissants",
           price: "₹130",
         },
       ];
@@ -120,11 +120,10 @@ function HomePage() {
       >
         <div className="mt-30 mb-5 ml-30 flex w-170 flex-col">
           <h1 className="font-caveat mt-10 text-8xl font-bold">
-            Delicious Baked <br></br> Goodness
+            Every Bite Feels Homemade
           </h1>
           <p className="font-oswald w-120 text-left lg:mt-4 lg:mb-5">
-            Baked goodness is comfort you can taste: warm, heat in an oven,
-            turning simple ingredients into something special
+            Baked goodness is oven-fresh comfort—soft, sweet, and made special by the simplest things.
           </p>
           <button className="font-exo2 peer bg-orange-400 px-[35px] py-[10px] text-white hover:cursor-pointer lg:w-[160px]">
             Shop now
@@ -141,7 +140,7 @@ function HomePage() {
         id="about"
         className="w-ful mt-30 flex flex-col items-center justify-center pt-25"
       >
-        <p className="font-caveat text-5xl font-bold">Indulge in tThe Taste</p>
+        <p className="font-caveat text-5xl font-bold">Indulge in The Taste</p>
         <p className="font-oswald mt-4 w-100 text-center">
           the kind that makes you slow down, take a deeper bite, and let every
           flavor linger. take a deeper bite, and let every flavor linger
@@ -226,27 +225,6 @@ function HomePage() {
         <div className="mt-10 flex w-240 justify-around">
           <div
             onClick={() => {
-              handleMenu("cookie");
-              handleMenuProduct("cookie");
-            }}
-            className="group cursor-pointer flex-col space-y-1"
-          >
-            <div className="product-logo hover-action-2 peer">
-              <img className="icons hover-image-action" src={cookie} />
-            </div>
-            <p
-              className={
-                menu === "cookie"
-                  ? "font-oswald hover-p text-center text-amber-500 transition peer-hover:text-amber-500"
-                  : "font-oswald hover-p text-center transition peer-hover:text-amber-50"
-              }
-            >
-              Cookies
-            </p>
-          </div>
-
-          <div
-            onClick={() => {
               handleMenu("cakes");
               handleMenuProduct("cakes");
             }}
@@ -263,6 +241,27 @@ function HomePage() {
               }
             >
               Cakes
+            </p>
+          </div>
+
+          <div
+            onClick={() => {
+              handleMenu("cookie");
+              handleMenuProduct("cookie");
+            }}
+            className="group cursor-pointer flex-col space-y-1"
+          >
+            <div className="product-logo hover-action-2 peer">
+              <img className="icons hover-image-action" src={cookie} />
+            </div>
+            <p
+              className={
+                menu === "cookie"
+                  ? "font-oswald hover-p text-center text-amber-500 transition peer-hover:text-amber-500"
+                  : "font-oswald hover-p text-center transition peer-hover:text-amber-500"
+              }
+            >
+              Cookies
             </p>
           </div>
 
@@ -338,7 +337,8 @@ function HomePage() {
                   key={index}
                   className="cart hover-action group relative flex-1 text-center"
                 >
-                  {products.name} <br></br>{products.price}
+                  {products.name} <br></br>
+                  {products.price}
                   <img
                     className="product-image hover-image-action w-70"
                     src={`/image/${products.name}.png`}
@@ -431,7 +431,7 @@ function HomePage() {
         </div>
 
         <div className="mt-15 flex items-center">
-          <div className="font-oswald mr-13 grid grid-cols-[30%_70%] items-center  gap-y-4">
+          <div className="font-oswald mr-13 grid grid-cols-[30%_70%] items-center gap-y-4">
             <a href="mailto: sakashcsbs2004@gmail.com">
               <div className="logo-div cursor-pointer">
                 <i class="fa-solid fa-envelope text-xl text-white"></i>
@@ -451,7 +451,10 @@ function HomePage() {
             <div className="logo-div">
               <i class="fa-solid fa-location-arrow text-xl text-white"></i>
             </div>
-            <p className="w-40">Grand Souther Trunk Rd,<br></br>Ashok Pillar,<br></br> Chennai-600048</p>
+            <p className="w-40">
+              Grand Souther Trunk Rd,<br></br>Ashok Pillar,<br></br>{" "}
+              Chennai-600048
+            </p>
           </div>
 
           <iframe
