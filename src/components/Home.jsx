@@ -6,7 +6,7 @@ function Home() {
       id="home"
       className="relative flex w-full overflow-hidden pt-20 pb-25 mobile:w-full mobile:justify-around mobile:pb-0"
     >
-      <div className="mt-30 mb-5 ml-30 flex w-170 flex-col mobile:m-0  mobile:w-full mobile:relative mobile:items-center ">
+      <div className="mt-30 mb-5 ml-30 flex w-170 flex-col mobile:m-0  mobile:w-full mobile:relative mobile:items-center mobile:mt-14">
         <h1 className="font-caveat mt-10 text-8xl font-bold mobile:text-5xl mobile:w-70 mobile:order-2 mobile:mt-[-40px] mobile:text-center">
           Every Bite Feels Homemade 
         </h1>
@@ -23,7 +23,7 @@ function Home() {
           src="/image/HoneyCake.png"
         />
 
-        <p className="font-caveat text-5xl font-bold mb-[-40px] tracking-widest hidden mobile:block ">Welcome</p>
+        <p className="font-caveat text-5xl font-bold mb-[-30px] tracking-widest hidden mobile:block ">Welcome</p>
       </div>
     </section>
   );

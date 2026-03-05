@@ -1,9 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import cake from "../assets/icons/cake.png";
 import bread from "../assets/icons/bread.png";
 import cookie from "../assets/icons/cookie.png";
 import cupcake from "../assets/icons/cupcake.png";
 import strawberrycake from "../assets/icons/strawberry-cake.png";
+import '../../public/image/Baklava.png';
+import '../../public/image/Black Forest.png';
+import '../../public/image/Classic Vanilla.png';
+import '../../public/image/Cream puff.png';
+import '../../public/image/Croissants.png';
+import '../../public/image/Danish pastry.png';
+import '../../public/image/English muffin.png';
+import '../../public/image/Focaccia.png';
+import '../../public/image/Fried Cheese Balls.png';
+import '../../public/image/Mini Cupcake.png';
+import '../../public/image/Multigrain.png';
+import '../../public/image/Pistachio Cardamom Rose.png';
+import '../../public/image/Rasmalai Cake.png';
+import '../../public/image/Salted Caramel.png';
+import '../../public/image/Tiramisu.png';
 
 function Menu() {
   const [menuFinder, setMenuFinder] = useState("cakes");
