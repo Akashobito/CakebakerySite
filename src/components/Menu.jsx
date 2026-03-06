@@ -116,12 +116,23 @@ function Menu() {
     }
   };
 
+  useEffect(()=>{
+    const images = [baklava,blackForest,classicVanilla,croissants,danishPastry,englishMuffin,focaccia,friedCheeseBalls,
+     miniCupcake,creamPuff,multigrain,pistachio,rasmalai,saltedCaramel,tiramisu];
+
+    images.forEach((image)=>{
+      const imageElement = new Image();
+      imageElement.src= image;
+      // console.log(imageElement)
+    });
+  },[])     /*Advance technique of image preloading at render the site*/
+
   return (
     <section
       id="menu"
       className=" mt-20 flex w-full flex-col items-center pt-20 mobile:pt-15 mobile:mt-0"
     >
-      <img className="hidden" src={baklava}/>
+      {/* <img className="hidden" src={baklava}/>  image preloading technique
       <img className="hidden" src={blackForest}/>
       <img className="hidden" src={classicVanilla}/>
       <img className="hidden" src={creamPuff}/>
@@ -135,7 +146,7 @@ function Menu() {
       <img className="hidden" src={pistachio}/>
       <img className="hidden" src={rasmalai}/>
       <img className="hidden" src={saltedCaramel}/>
-      <img className="hidden" src={tiramisu}/>
+      <img className="hidden" src={tiramisu}/> */}
 
       <div className="flex w-170 flex-col items-center mobile:w-full">
         <p className="font-caveat mt-4 mb-4 text-5xl font-bold">Our Menu</p>
