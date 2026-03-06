@@ -44,7 +44,7 @@ function Blog() {
               Guide To Gluten Free Life: 16 Recepe <br></br> And Our Top Tips
             </p>
             <p className="mt-6 ml-4 text-gray-400 mobile:text-sm">On December 11, 2026</p>
-            <p className="font-roboto mt-3 ml-4 text-orange-400">Read More</p>
+            <p className="font-roboto mt-3 ml-4 text-orange-400 mobile:text-sm">Read More</p>
           </div>
         </div>
       </section>

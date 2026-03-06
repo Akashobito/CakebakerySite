@@ -21,7 +21,7 @@ function Contact() {
               </div>
             </a>
             <a href="mailto: sakashcsbs2004@gmail.com">
-              <p className="">sakashcsbs2004@gmail.com</p>
+              <p className="mobile:text-sm">sakashcsbs2004@gmail.com</p>
             </a>
             <a href="tel: +916383283581">
               <div className="logo-div">
@@ -29,12 +29,12 @@ function Contact() {
               </div>
             </a>
             <a href="tel: +916383283581">
-              <p className="">+91 6383283581</p>
+              <p className="mobile:text-sm">+91 6383283581</p>
             </a>
             <div className="logo-div">
               <i class="fa-solid fa-location-arrow text-xl mobile:text-sm text-white"></i>
             </div>
-            <p className="w-40">
+            <p className="w-40 mobile:text-sm">
               Grand Souther Trunk Rd,<br></br>Ashok Pillar,<br></br>{" "}
               Chennai-600048
             </p>
