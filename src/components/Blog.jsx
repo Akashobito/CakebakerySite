@@ -13,7 +13,7 @@ function Blog() {
           </p>
         </div>
 
-        <div className="mt-10 flex w-270 mobile:w-full mobile:flex-col mobile:items-center mobile:gap-y-10">
+        <div className="mt-10 flex w-270 mobile:w-full mobile:flex-col mobile:items-center mobile:gap-y-10 tablet:w-full tablet:px-6">
           <div className="blog-div hover-action h-100 w-80 transition mobile:w-70 mobile:h-92">
             <div className="h-50 w-full overflow-hidden rounded-3xl mobile:h-46">
               <img className="mt-[-74px]" src="/image/burger.png" />
@@ -25,7 +25,7 @@ function Blog() {
             <p className="font-roboto mt-3 ml-4 text-orange-400 mobile:text-sm">Read More</p>
           </div>
 
-          <div className="blog-div hover-action mx-10 h-100 w-80 transition  mobile:w-70 mobile:h-92">
+          <div className="blog-div hover-action mx-10 h-100 w-80 transition  mobile:w-70 mobile:h-92 tablet:mx-5">
             <div className="h-50 w-full overflow-hidden rounded-3xl mobile:h-46">
               <img className="h-50 w-full" src="/image/food2.jpg" />
             </div>

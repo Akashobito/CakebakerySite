@@ -9,7 +9,7 @@ function About() {
     <>
       <section
         id="about"
-        className="w-full mt-30 flex flex-col items-center justify-center pt-25 mobile:m-0 mobile:pt-20"
+        className="w-full mt-30 flex flex-col items-center justify-center pt-25 mobile:m-0 mobile:pt-20 tablet:mt-0"
       >
         <p className="font-caveat text-5xl font-bold mobile:text-5xl">Indulge in The Taste</p>
         <p className="font-oswald mt-4 w-100 text-center mobile:text-sm mobile:w-70">
@@ -21,7 +21,7 @@ function About() {
 
       <section className="relative mt-5 mobile:mt-0 flex min-w-full justify-around space-x-19 mobile:flex-col mobile:space-x-0 mobile:items-center">
         <img
-          className="absolute top-[-70px] right-108 h-120 w-140 object-contain mobile:hidden"
+          className="absolute top-[-70px] right-108 h-120 w-140 object-contain mobile:hidden tablet:w-90 tablet:h-150 tablet:object-contain tablet:right-65"
           src="/image/bread basket.png"
         />
         <div className="flex h-110 flex-col justify-between mobile:justify-around mobile:h-fit mobile:mt-7 mobile:gap-y-7">

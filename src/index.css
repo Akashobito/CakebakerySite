@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @custom-variant mobile (@media (max-width: 600px));   /*custom breakpoint using max-width for focus on mobile*/
+@custom-variant tablet (@media (min-width: 601px) and (max-width: 992px));
 
 @layer base {
   html {

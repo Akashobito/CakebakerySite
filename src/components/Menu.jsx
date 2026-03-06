@@ -130,7 +130,7 @@ function Menu() {
   return (
     <section
       id="menu"
-      className=" mt-20 flex w-full flex-col items-center pt-20 mobile:pt-15 mobile:mt-0"
+      className=" mt-20 flex w-full flex-col items-center pt-20 mobile:pt-15 mobile:mt-0 tablet:mt-0"
     >
       {/* <img className="hidden" src={baklava}/>  image preloading technique
       <img className="hidden" src={blackForest}/>
@@ -262,8 +262,8 @@ function Menu() {
         </div>
       </div>
 
-      <div className="mt-0 w-270 mobile:w-full">
-        <div className="font-oswald mt-9 flex space-x-20 mobile:flex-col mobile:space-x-0 mobile:items-center mobile:h-210 mobile:gap-y-10">
+      <div className="mt-0 w-270 mobile:w-full tablet:w-full">
+        <div className="font-oswald mt-9 flex space-x-20 mobile:flex-col mobile:space-x-0 mobile:items-center mobile:h-210 mobile:gap-y-10 tablet:w-full tablet:px-10 ">
           {menuProduct.map((products, index) => {
             return (
               <div
