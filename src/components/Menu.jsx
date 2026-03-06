@@ -151,7 +151,7 @@ function Menu() {
       <div className="flex w-170 flex-col items-center mobile:w-full">
         <p className="font-caveat mt-4 mb-4 text-5xl font-bold">Our Menu</p>
         <p className="font-oswald w-100 text-center mobile:text-sm mobile:w-70">
-          Browse throughh our delectable menu of tasty treats and baked goodies
+          Browse through our delectable menu of tasty treats and baked goodies
         </p>
       </div>
 

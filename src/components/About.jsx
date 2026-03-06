@@ -34,7 +34,7 @@ function About() {
             </p>
             <p className="font-oswald text-center mobile:text-sm">
               Everything on our menu has gluten free options for you. Healthy
-              food has neveer tasted better. try it today.
+              food has never tasted better. try it today.
             </p>
           </div>
 
@@ -61,8 +61,8 @@ function About() {
               Homemade Bread
             </p>
             <p className="font-oswald text-center mobile:text-sm">
-              Tease the best, oven fresh gourmet homemade bread , cookies, ckes,
-              pastries, cutomized cakes, cream rolls and much more.
+              Taste the best, oven fresh gourmet homemade bread , cookies, cakes,
+              pastries, customized cakes, cream rolls and much more.
             </p>
           </div>
 

@@ -41,7 +41,7 @@ function Blog() {
               <img className="h-50 w-full mobile:mt-[-15px]" src="/image/food3.jpg" />
             </div>
             <p className="font-roboto mt-4 ml-4 w-70 mobile:text-sm">
-              Guide To Gluten Free Life: 16 Recepe <br></br> And Ourt Top Tips
+              Guide To Gluten Free Life: 16 Recepe <br></br> And Our Top Tips
             </p>
             <p className="mt-6 ml-4 text-gray-400 mobile:text-sm">On December 11, 2026</p>
             <p className="font-roboto mt-3 ml-4 text-orange-400">Read More</p>
