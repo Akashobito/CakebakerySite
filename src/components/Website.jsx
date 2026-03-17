@@ -11,9 +11,13 @@ import Blog from "./Blog";
 import Contact from "./Contact";
 import Navbar from "./Navbar";
 import LoginCard from "./LoginCard";
+import LoadingPage from "./LoadingPage";
+import LoginSuccessfull from "./LoginSuccessfull";
 
 function Website() {
-  const [islogin, setIsLogin] = useState(false)
+  const [islogin, setIsLogin] = useState(false);
+  const [isLoading, setIsloading] = useState(false);
+  const [isLoginSuccess, setIsLoginSucess] = useState(false);
 
   /*  useEffect(() => {
     console.log(menuProduct);
@@ -37,7 +41,10 @@ function Website() {
       <Menu />
       <Blog />
       <Contact />
-      {islogin && <LoginCard setIsLogin={setIsLogin} />}
+      {islogin && <LoginCard setIsLogin={setIsLogin} setIsloading={setIsloading}/>}
+      {isLoading && <LoadingPage setIsloading={setIsloading} setIsLoginSucess={setIsLoginSucess}/>}
+      {isLoginSuccess && <LoginSuccessfull setIsLoginSucess={setIsLoginSucess}/>}
+
     </>
   );
 }
