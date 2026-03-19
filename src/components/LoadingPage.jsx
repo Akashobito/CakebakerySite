@@ -1,10 +1,16 @@
 import React, { useEffect } from "react";
 
-function LoadingPage({ setIsloading, setIsLoginSucess }) {
+function LoadingPage({ setIsloading, setIsLoginSucess,setIsLogoutSucess,isAccCreated,setIsAccCreated}) {
    useEffect(()=>{
     const stateInterval = setTimeout(()=>{
+      console.log(isAccCreated);
       setIsloading(false);
-      setIsLoginSucess(true);
+      if(isAccCreated){
+        setIsAccCreated(false)
+        setIsLogoutSucess(true);
+      }else{
+        setIsLoginSucess(true);
+      }
     },3000)
 
     return () => {

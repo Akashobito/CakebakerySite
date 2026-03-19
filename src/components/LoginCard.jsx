@@ -7,9 +7,10 @@ import axios from "axios";
 import LoadingPage from "./LoadingPage";
 import LoginSuccessfull from "./LoginSuccessfull";
 
-function LoginCard({ setIsLogin, setIsloading}) {
+function LoginCard({ setIsLogin, setIsloading, setIsSignUp}) {
   const inputRef = useRef(null); //own ref for password input element
   const eyeRef = useRef(null);
+  const [isPass, setIsPass] = useState(true);
 
   const schema = object({
     email: string()
@@ -24,13 +25,6 @@ function LoginCard({ setIsLogin, setIsloading}) {
         return value !== "admin@123";
       }),
   });
-
-  const handleLoadingAfterLogin = () => {
-    clearInterval(interval);
-    const interval = setTimeout(() => {
-      setIsLoading(false);
-    });
-  };
 
   const {
     register,
@@ -63,19 +57,15 @@ function LoginCard({ setIsLogin, setIsloading}) {
   const handleEyeButton = () => {
     if (inputRef) {
       const inputElement = inputRef.current;
+      const eyeElement = eyeRef.current;
       if (inputElement.type === "password") {
         inputElement.type = "text";
-      } else {
-        inputElement.type = "password";
-      }
-    }
-
-    if (eyeRef) {
-      const eyeElement = eyeRef.current;
-      if (eyeElement.classList.contains("fa-eye")) {
+        setIsPass(false);
         eyeElement.classList.add("fa-eye-slash");
         eyeElement.classList.remove("fa-eye");
       } else {
+        setIsPass(true);
+        inputElement.type = "password";
         eyeElement.classList.add("fa-eye");
         eyeElement.classList.remove("fa-eye-slash");
       }
@@ -102,6 +92,11 @@ function LoginCard({ setIsLogin, setIsloading}) {
     console.log(error);
   };
 
+  const handleSignUp = () =>{
+    setIsLogin(false)
+    setIsSignUp(true);
+  }
+
   return (
     <>
       <div className="fixed top-0 z-20 flex h-[100vh] w-full items-center justify-center backdrop-blur-md backdrop-brightness-80 [&_button]:hover:cursor-pointer">
@@ -122,7 +117,7 @@ function LoginCard({ setIsLogin, setIsloading}) {
                   </p>
                 </div>
 
-                <p className="mobile:w-20 font-medium hover:cursor-pointer">
+                <p onClick={handleSignUp} className="mobile:w-20 font-medium hover:cursor-pointer">
                   Sign Up
                 </p>
               </div>
@@ -162,7 +157,7 @@ function LoginCard({ setIsLogin, setIsloading}) {
                     }}
                     {...passwordRegister}
                     className="mt-1 rounded-xl py-1 pr-12 pl-4 text-lg outline-2"
-                    type="password"
+                    type={isPass? 'password': 'text'}
                     id="password"
                   ></input>
                   <i
@@ -180,9 +175,10 @@ function LoginCard({ setIsLogin, setIsloading}) {
                 <div className="button-potion border-black-500 mobile:py-4 bg-white p-4 px-6 py-6 font-medium">
                   <button
                     type="submit"
+                    title="Enter the Fields"
                     className="mt-1 mb-5 w-full rounded-xl bg-orange-400 py-[6px] text-white disabled:!cursor-not-allowed"
                     disabled={!isDirty || !isValid || isSubmitSuccessful}
-                  >
+                    >
                     Login
                   </button>
                   <button

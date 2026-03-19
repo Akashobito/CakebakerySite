@@ -1,12 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 
-function Navbar() {
+function Navbar({isAccCreated,setIsLogin,setShowUserAccount,interval}) {
   const [pageTrack, setPageTrack] = useState("home");
 
   const handleUrl = (page) => {
     // console.log(page);
     setPageTrack(page); //handle the url
   };
+
+  const handleUserInfo = () => {
+    if(isAccCreated){
+      setShowUserAccount(true)
+    }else{
+      clearInterval(interval.current); //to control the overlap of setInterval to show up the login page
+      setIsLogin(true)
+    }
+  }
 
   useEffect(() => {
     window.location.hash = "home";
@@ -77,6 +86,9 @@ function Navbar() {
           </li>
         </a>
       </ul>
+      <div onClick={handleUserInfo} className="flex items-center cursor-pointer">
+        <i className="fa-solid fa-circle-user text-3xl relative top-1 right-10 text-orange-400 mobile:top-1 mobile:right-1.5 "></i>
+      </div>
     </div>
   );
 }
